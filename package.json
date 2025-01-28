@@ -1,0 +1,47 @@
+{
+    "name": "ai-git-checker-front",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "engines": {
+        "node": "22.x",
+        "npm": "10.x"
+    },
+    "scripts": {
+        "start": "vite --host 0.0.0.0 --port $PORT preview",
+        "dev": "vite",
+        "build": "tsc && vite build",
+        "postinstall": "npm run build",
+        "lint": "eslint .",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+        "@rollup/plugin-inject": "^5.0.5",
+        "@solana/wallet-adapter-react-ui": "^0.9.35",
+        "@solana/wallet-adapter-wallets": "^0.19.32",
+        "axios": "^1.7.9",
+        "copy-to-clipboard": "^3.3.3",
+        "highlight.js": "^11.11.1",
+        "mobx": "^6.13.5",
+        "mobx-react": "^9.2.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
+        "react-markdown": "^9.0.3",
+        "react-simple-code-editor": "^0.14.1",
+        "sass": "^1.77.8",
+        "@vitejs/plugin-react": "^4.3.4",
+        "vite": "^6.0.7"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.17.0",
+        "@types/react": "^18.3.18",
+        "@types/react-dom": "^18.3.5",
+        "eslint": "^9.17.0",
+        "eslint-plugin-react-hooks": "^5.0.0",
+        "eslint-plugin-react-refresh": "^0.4.16",
+        "globals": "^15.14.0",
+        "typescript": "~5.6.2",
+        "typescript-eslint": "^8.18.2"
+    }
+}
