@@ -1,0 +1,54 @@
+.repo-stats-container {
+    width: 100%;
+    grid-column: 1 / span 2;
+    margin-top: 14px;
+
+    h2 {
+        text-align: left;
+    }
+
+    table {
+        margin-top: 12px;
+        width: 100%;
+        padding: 6px;
+        border-radius: 12px;
+        background-color: #ffffff1a;
+        border: 1px solid #ffffff33;
+        backdrop-filter: blur(10px);
+
+        th {
+            text-align: left;
+            color: #b47eff;
+            font-size: 18px;
+            padding: 4px 12px;
+        }
+
+        td {
+            text-align: left;
+            padding: 4px 12px;
+            font-size: 14px;
+        }
+    }
+
+    @media screen and (max-width: 1200px) {
+        grid-column: 1;
+    }
+
+    @media screen and (max-width: 750px) {
+        margin-top: 0;
+
+        h2 {
+            font-size: 16px;
+        }
+
+        table {
+            th {
+                font-size: 14px;
+            }
+
+            td {
+                font-size: 12px;
+            }
+        }
+    }
+}

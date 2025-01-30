@@ -1,0 +1,272 @@
+.chat-container {
+    position: relative;
+    height: 100%;
+
+    .editor-container {
+        .npm__react-simple-code-editor__textarea {
+            outline: none;
+            overflow: scroll;
+
+            &::placeholder {
+                color: #e5e5e5;
+                text-align: center;
+            }
+        }
+    }
+
+    .copy-btn {
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        top: 16px;
+        right: 16px;
+        border-radius: 8px;
+        background-color: #ffffff1a;
+        border: 1px solid #ffffff33;
+        transition: 0.2s all;
+
+        &:hover {
+            cursor: pointer;
+            background-color: #ffffff2d;
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        .editor-container {
+            min-height: 400px;
+        }
+    }
+}
+
+// ---------------- AI answers chat ----------------
+.ai-validation-chat {
+    border-radius: 12px;
+    background-color: #ffffff1a;
+    border: 1px solid #ffffff33;
+    backdrop-filter: blur(10px);
+}
+.ai-generation-chat {
+    border-radius: 12px;
+    background-color: #ffffff1a;
+    border: 1px solid #ffffff33;
+    backdrop-filter: blur(10px);
+}
+.ai-repo-validation-chat {
+    border-radius: 12px;
+    background-color: #ffffff1a;
+    border: 1px solid #ffffff33;
+    backdrop-filter: blur(10px);
+    font-family: "Fira code", "Fira Mono", monospace;
+    font-size: 14px;
+
+    .result-container {
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        overflow: scroll;
+
+        h1 {
+            font-size: 20px;
+            color: #b47eff;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #b47eff;
+        }
+
+        h4 {
+            color: #36f068;
+            font-size: 16px;
+        }
+
+        ol {
+            padding-left: 30px;
+
+            li:not(:first-child) {
+                margin-top: 12px;
+            }
+        }
+
+        ul {
+            padding-left: 20px;
+
+            li:not(:first-child) {
+                margin-top: 12px;
+            }
+        }
+    }
+}
+
+// ---------------- Chat with user code for validation ----------------
+.validate-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .editor-container {
+        border-radius: 12px;
+        background-color: #ffffff1a;
+        border: 1px solid #ffffff33;
+        backdrop-filter: blur(10px);
+    }
+
+    .validate-btn {
+        padding: 18px;
+        background-color: #b47eff;
+        border: 1px solid #ffffff33;
+        border-radius: 8px;
+        color: black;
+        font-family: ChicagoFLF, Inter, sans-serif;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 6px;
+        transition: 0.2s all;
+
+        &.disabled {
+            background-color: #ffffff1a;
+            color: white;
+
+            svg path {
+                fill: white;
+            }
+        }
+
+        &:hover:not(.disabled) {
+            cursor: pointer;
+            background-color: #bf97f7;
+        }
+    }
+
+    // &.one-line {
+    //     height: 110px;
+    // }
+
+    @media screen and (max-width: 750px) {
+        .validate-btn {
+            font-size: 14px;
+            padding: 8px;
+        }
+    }
+}
+
+// ---------------- Chat with user multi messages ----------------
+.discussion-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .messages-container {
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        padding: 24px;
+        background-color: #ffffff1a;
+        border: 1px solid #ffffff33;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        gap: 10px;
+        overflow: scroll;
+
+        .message-item {
+            width: fit-content;
+            max-width: 100%;
+            padding: 12px;
+            font-family: ChicagoFLF, Inter, sans-serif;
+            font-size: 16px;
+            text-align: left;
+            color: white;
+            background-color: #4a326c;
+            border-radius: 16px 16px 16px 0px;
+        }
+    }
+
+    .input-container {
+        height: 60px;
+        border-radius: 12px;
+        background-color: #ffffff1a;
+        border: 1px solid #ffffff33;
+        backdrop-filter: blur(10px);
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding: 12px;
+
+        textarea {
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            margin-top: 4px;
+            resize: none;
+            outline: none;
+            font-family: ChicagoFLF, Inter, sans-serif;
+            font-size: 18px;
+            color: white;
+            flex: 1 1 auto;
+
+            &::placeholder {
+                color: #e5e5e5;
+                line-height: 28px;
+            }
+        }
+
+        .send-btn {
+            padding: 6px 12px;
+            background-color: #b47eff;
+            border: 1px solid #ffffff33;
+            border-radius: 8px;
+            color: black;
+            font-family: ChicagoFLF, Inter, sans-serif;
+            display: flex;
+            align-items: center;
+            transition: 0.2s all;
+
+            &.disabled {
+                background-color: rgb(130, 130, 130);
+                color: white;
+
+                svg path {
+                    fill: white;
+                }
+            }
+
+            &:hover:not(.disabled) {
+                cursor: pointer;
+                background-color: #bf97f7;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        gap: 6px;
+
+        .messages-container {
+            padding: 8px;
+            min-height: 400px;
+
+            .message-item {
+                font-size: 14px;
+            }
+        }
+
+        .input-container {
+            textarea {
+                font-size: 14px;
+                margin-top: 10px;
+
+                &::placeholder {
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}
