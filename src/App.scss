@@ -1,0 +1,16 @@
+#root {
+    max-width: 1600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.app-container {
+    min-height: 100vh;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (max-width: 750px) {
+        padding: 1rem;
+    }
+}
